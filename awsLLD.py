@@ -41,7 +41,7 @@ def getSQSMainQueueByComponent(a, r, c):
     for q in queues:
         qname = q.name
         # Filter out dead letter queues and only get the queues for a component in PROD
-        if not re.search('dead', qname, re.I) and re.search(component, qname) and re.search('prod', qname, re.I):
+        if not re.search('dead', qname, re.I) and re.search(component, qname):
             qdata.append(qname)
 
     # Add Zabbix LLD Macros into LLD data
